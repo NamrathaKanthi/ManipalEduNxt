@@ -1,0 +1,16 @@
+.widget-heading {
+  p {
+    margin-bottom: 0px;
+    padding-left: 6px;
+  }
+  i {
+    color: #FF5722;
+    right: 8px;
+    top: 8px;
+    font-size: 14px;
+  }
+}
+
+.dropdown-toggle::after{
+  display: none;
+}

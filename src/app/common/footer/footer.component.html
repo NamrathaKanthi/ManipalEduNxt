@@ -1,0 +1,25 @@
+<div class="footerContent">
+  <footer>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a class="">Terms |</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="">Conditions |</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="positive-color">Powered by Edunxt</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <span *ngIf="csvDownloadflag == false">This report was generated on {{refreshTime | date:'medium'}} -</span>
+        <span *ngIf="csvDownloadflag == true">This report was generated on {{refreshTime |date:'medium'}} -</span>
+        <span class="cursor-pointer text-primary" (click)="refreshReportFn()"> Refresh Report </span>
+      </div>
+    </div>
+  </footer>
+</div>

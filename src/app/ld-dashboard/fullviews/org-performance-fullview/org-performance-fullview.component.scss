@@ -1,0 +1,85 @@
+@import "../../../shared/variables.scss";
+
+.m-l-8 {
+  margin-left: 8px;
+}
+
+.w-140 {
+  width: 140px;
+}
+
+.m-b-12 {
+  margin-bottom: 12px;
+}
+
+.negative-color {
+  color: $orange !important;
+}
+
+table {
+  tbody {
+    td {
+      font-size: 12px;
+      font-weight: 100;
+    }
+  }
+}
+
+.action-items {
+  margin-top: 12px;
+
+  .compare-selected {
+    color: #fff;
+    background-color: #5584ff;
+    margin-right: 8px;
+  }
+
+  .clear-selected {
+    color: #fff;
+    background-color: #707070;
+  }
+
+  .compare-selected,
+  .clear-selected {
+    padding: 8px;
+    cursor: pointer;
+  }
+}
+
+.check-box {
+  width: 12px;
+  height: 12px;
+  color: #ddd;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  margin-right: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.checked-box {
+  background-color: orange !important;
+}
+
+.imgActive {
+  position: relative; // float: left;
+
+  img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%; // margin-left: 10px;
+    border: 1px solid #fff;
+    z-index: 0;
+  }
+
+  i {
+    position: absolute;
+    bottom: -12px;
+    right: -4px;
+    background: linear-gradient(to top left, #00ff00 0%, #ccff33 100%); // background-color: #befd45d9;
+    border-radius: 50%;
+    color: #00ff00;
+    font-size: 14px;
+  }
+}

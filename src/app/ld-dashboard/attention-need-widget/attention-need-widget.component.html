@@ -1,0 +1,72 @@
+<div class="attention-needed">
+  <div class="widget-heading font-weight-bold">
+    <p>These items need your attention</p>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="widget-block">
+        <div class="headingText clearfix">
+          <ul class="nav float-left">
+            <li class="nav-item">
+              <p class="nav-link">Faculty</p>
+            </li>
+          </ul>
+        </div>
+        <div class="attention-one-info">
+          <div class="text-primary font-weight-bold">February </div>
+          <div>
+            <span>Faculty with the most popular content </span>
+          </div>
+          <div class="m-t-15">
+            <div class="d-inline imgActive">
+              <img src="/assets/images/user.png" alt="img">
+              <i class="far fa-circle"></i>
+            </div>
+            <div class="d-inline">
+              <span class="text-primary font-weight-bold font-size"> Ashutosh Tiwari </span>
+            </div>
+          </div>
+        </div>
+        <div class="row m-t-55">
+          <div class="col-md-5">
+            <p class="text-primary font-weight-bold font-size"> 56 </p>
+            <div> Content Created </div>
+          </div>
+          <div class="col-md-4">
+            <p class="text-primary font-weight-bold font-size"> 2667 </p>
+            <div> Times Liked </div>
+          </div>
+          <div class="col-md-3">
+            <div class="text-primary">
+              <span>
+                <i class="far fa-star text-warning"></i>
+              </span>
+              <span class="font-weight-bold font-size">4.6</span>
+            </div>
+            <div> Avg. Rating </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3" *ngFor="let items of message; let i = index">
+      <div class="widget-block">
+        <div class="headingText clearfix">
+          <ul class="nav float-left">
+            <li class="nav-item">
+              <a class="nav-link"> {{items.title}} </a>
+            </li>
+          </ul>
+          <div>
+            <span class="float-right">
+              <i class="far fa-times-circle" (click)="removeWidget(i)"></i>
+            </span>
+          </div>
+        </div>
+        <div>
+          {{items.text}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

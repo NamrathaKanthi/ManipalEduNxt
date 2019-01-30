@@ -1,0 +1,32 @@
+.selectDate {
+  border: 1px solid #0146f9;
+  color: #0146f9;
+  cursor: pointer;
+  font-size: 12px !important;
+
+  .uneditable-input {
+    border-right: 1px solid #0146f9;
+    border-radius: 0px;
+    color: #5584ff;
+    font-size: 13px;
+    padding: 4px 8px;
+    text-align: center;
+  }
+
+  .calender-img {
+    padding: 5px 5px 0px 5px;
+  }
+}
+
+.form-group {
+  margin-bottom: 0px !important;
+}
+
+@media (max-width: 576px) {
+  .selectDate {
+    .uneditable-input {
+      width: 184px;
+      font-size: 11px;
+    }
+  }
+}

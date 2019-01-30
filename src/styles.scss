@@ -1,0 +1,935 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./fonts.scss";
+@import "./app/shared/variables.scss";
+
+//set defaults
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.row [class*="col-"] {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+.mainBody {
+  font-size: 12px !important;
+  font-family: "Muli";
+  padding: 0;
+
+  .dashboard {
+    background-color: $grayTwo;
+    padding: 0px 36px;
+
+    .widget-row {
+      margin: 0;
+    }
+  }
+
+  .positive-color {
+    color: $lightBlue !important;
+  }
+
+  .negative-color {
+    color: $orange !important;
+  }
+}
+
+.widget-block {
+  position: relative;
+  height: 465px;
+  background-color: $white;
+  margin: 6px;
+  padding: 10px 20px;
+  box-shadow: 1px 1px $grayTwo;
+
+  .boldText {
+    font-size: 13px !important;
+    font-weight: 600;
+    color: $darkGray;
+  }
+
+  .changeInNumberText {
+    font-size: 11px !important;
+  }
+
+  .font-color {
+    color: $darkGray;
+  }
+
+  .bigNumber {
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+
+  .positive-color {
+    color: $lightBlue;
+  }
+
+  .negative-color {
+    color: $orange;
+  }
+
+  .highNumber {
+    color: $green;
+  }
+
+  .lowNumber {
+    color: $orange;
+  }
+
+  .changeNumber {
+    color: $green;
+    font-weight: 600;
+  }
+
+  .changeNumberLow {
+    color: $orange;
+    font-weight: 600;
+  }
+
+  .small-font {
+    padding-top: 7px !important;
+    font-size: 12px;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.p-r-6 {
+  padding-right: 6px;
+}
+
+.p-l-20 {
+  padding-left: 20px;
+}
+
+.p-l-10 {
+  padding-left: 10px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.activity-widgets .widget-block {
+  height: 280px;
+
+  .text-fix-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+.spinner_loading {
+  // position: relative;
+  // height: 200px;
+  // position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.spinner_inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #17a2b8;
+}
+
+.arrow-space {
+  img {
+    height: 12px !important;
+    width: 12px !important;
+    margin-top: -10px;
+  }
+}
+
+.activity-widgets .headingText,
+.attention-needed .headingText {
+  margin-left: -20px;
+
+  .nav-item a {
+    font-weight: 700;
+  }
+}
+
+.dashboard .row .col-md-6 .widget-block {
+  height: 460px;
+}
+
+.activity-widgets {
+  .boldText {
+    margin-bottom: 0;
+  }
+
+  .m-t-10 {
+    margin-top: -10px;
+    font-size: 13px !important;
+  }
+}
+
+.widget-heading {
+  padding: 14px 0px;
+
+  i {
+    color: $orange;
+    right: 8px;
+    top: 8px;
+    font-size: 14px;
+  }
+}
+
+// .widget-row:first-child .widget-heading {
+//   padding-top: 0px;
+// }
+
+.headingText {
+  border-left: 6px solid $lightOrange;
+  margin-bottom: 12px;
+  margin-left: -20px;
+  padding-left: 12px;
+  color: $black;
+  position: relative;
+
+  .nav .nav-link {
+    padding: 4px;
+  }
+
+  .nav-item a {
+    font-size: 14px;
+    color: $black;
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  .active {
+    font-weight: 700;
+    border-bottom: 2px solid $lightOrange;
+  }
+
+  ul li {
+    margin-right: 12px;
+  }
+
+  i {
+    color: $orange;
+    border-radius: 50%;
+    right: 8px;
+    top: 8px;
+    font-size: 14px;
+  }
+
+  .fa-times-circle {
+    color: $lightBlue;
+  }
+
+  .dropdown-menu-items {
+    padding: 4px 0px;
+
+    li {
+      margin: 0;
+      padding: 0;
+
+      img {
+        height: 10px;
+        width: 10px;
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+//date-picker CSS
+.daterangepicker {
+  font-size: 12px;
+  padding-bottom: 30px !important;
+
+  .input-mini {
+    color: $lightBlue !important;
+    border: none !important;
+    border-bottom: 1px solid $lightBlue !important;
+    border-radius: 0% !important;
+    text-align: center !important;
+  }
+
+  .daterangepicker_input i {
+    display: none;
+  }
+
+  .calendar {
+    .calendar-table {
+      table {
+        thead {
+          color: $lightBlue;
+        }
+      }
+    }
+  }
+
+  .ranges {
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+
+    .range_inputs {
+      .cancelBtn {
+        display: none;
+      }
+    }
+  }
+}
+
+//Learner-track CSS
+.learner-track-fullview select {
+  padding: 4px;
+  border: 1px solid $lightBlue;
+}
+
+.learnerPaceText {
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+//pagination
+.paginationSpace {
+  display: inline-flex;
+  position: absolute;
+  right: 14px;
+  bottom: 8px;
+}
+
+//Table CSS
+.org-performance,
+.content-perform,
+.learner-track-fullview,
+.content-fullview,
+.learner-performance-fullview {
+  table {
+    tr {
+      border-bottom: 2px dotted $grayOne;
+
+      tr:last-child {
+        border-bottom: none;
+      }
+
+      .userName {
+        vertical-align: middle;
+      }
+
+      .action_icon {
+        img {
+          height: 16px;
+          width: 16px;
+        }
+      }
+
+      th {
+        padding: 15px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        vertical-align: middle;
+        text-align: left !important;
+        cursor: pointer;
+
+        img {
+          border-radius: 50%;
+        }
+
+        input {
+          border: none;
+          margin-left: 4px;
+        }
+
+        input::placeholder {
+          color: #000;
+          font-weight: 600;
+        }
+
+        input:focus {
+          outline: none;
+          // padding: 2px;
+          border-bottom: 1px solid $lightBlue;
+          color: $lightBlue;
+          font-weight: 600;
+        }
+      }
+
+      td {
+        padding: 15px 8px;
+        vertical-align: middle;
+        font-size: 12px;
+
+        img {
+          height: 22px;
+          width: 22px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.org-performance {
+  table {
+
+    tr td,
+    tr th {
+      padding: 12px 4px;
+      font-size: 11px;
+    }
+  }
+
+  tr td {
+    .imgActive {
+      position: relative;
+
+      i {
+        position: absolute;
+        bottom: -6px;
+        right: -2px;
+        border-radius: 50%;
+        background: linear-gradient(to top left, #00ff00 0%, #ccff33 100%);
+        color: #00ff00;
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+    }
+
+    .userName {
+      margin-left: 6px !important;
+    }
+  }
+}
+
+.content-perform,
+.content-fullview {
+  table tbody tr th {
+    color: $lightBlue;
+  }
+}
+
+.org-performanace {
+  .search-org-user {
+    position: relative;
+    margin-left: 12px;
+
+    input {
+      padding: 6px;
+      padding-left: 36px;
+      border: 1px solid $lightBlue;
+      width: 280px;
+    }
+
+    .serach-icon {
+      position: absolute;
+      left: 12px;
+      top: 8px;
+
+      i {
+        color: $lightBlue;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.org-performanace input::placeholder {
+  color: $blue;
+  font-size: 10px;
+}
+
+.new-added-table {
+  border-top: 3px dotted $orange !important;
+  border-bottom: 3px dotted $orange !important;
+  background-color: #f77f6c14;
+}
+
+// Line Graph CSS
+#activeUserGraph,
+#modeOfDeliveryGraph {
+  .line1 {
+    stroke: $orange;
+    stroke-width: 6px;
+    fill: none;
+    opacity: 0.8;
+  }
+
+  .line2 {
+    stroke: $lightBlue;
+    stroke-width: 6px;
+    fill: none;
+    opacity: 0.8;
+  }
+
+  .y-axis path {
+    stroke-width: 0 !important;
+  }
+
+  .axis path {
+    fill: none;
+    stroke: $darkGray;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+
+  .axis line {
+    fill: none;
+    stroke: $darkGray;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    font-family: "Muli";
+    font-size: 9px;
+    fill: $darkGray;
+  }
+
+  .grid line {
+    stroke: $darkGray;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+    stroke-dasharray: 5, 5;
+  }
+
+  .grid path {
+    stroke-width: 0;
+  }
+}
+
+// view details CSS
+.widget-heading .fa-angle-left {
+  color: $black;
+  margin-right: 6px;
+  // border-radius: 50%;
+  // border: 1px solid $gray;
+  // padding: 1px;
+  // padding-right: 2px;
+  cursor: pointer;
+}
+
+.ellipse {
+  color: $lightBlue !important;
+}
+
+// graph badge CSS
+.graph-badges {
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+// .graph-badges {
+//   i{
+//     border-radius: 50%;
+//     border: none;
+//   }
+// }
+
+#performanceGraph,
+#progressGraph,
+#notification_graph {
+  .y-axis path {
+    stroke-width: 0 !important;
+  }
+
+  .axis path {
+    fill: none;
+    stroke: $darkGray;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+
+  .axis line {
+    fill: none;
+    stroke: $darkGray;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    font-family: "Muli";
+    font-size: 11px;
+    fill: $darkGray;
+  }
+
+  .grid line {
+    stroke: $darkGray;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+    stroke-dasharray: 5, 5;
+  }
+
+  .grid path {
+    stroke-width: 0;
+  }
+}
+
+.testScoresGraph {
+  width: 100%;
+
+  .y-axis {
+    path {
+      stroke: none !important;
+    }
+
+    g line {
+      stroke: none !important;
+    }
+  }
+
+  .axis {
+    path {
+      fill: #fff;
+    }
+  }
+
+  .y-grid {
+    path {
+      stroke: #fff;
+    }
+
+    g {
+      line {
+        stroke-dasharray: 4px;
+        stroke: #ccc;
+      }
+    }
+  }
+
+  .x-grid {
+    path {
+      stroke: #fff;
+    }
+
+    g {
+      line {
+        stroke-dasharray: 4px;
+        stroke: #ccc;
+      }
+    }
+  }
+}
+
+#testScoresGraph {
+  .y-axis path {
+    stroke: none !important;
+  }
+
+  .axis path {
+    fill: none;
+    stroke: $darkGray;
+    stroke-opacity: 0.2;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+
+  .axis line {
+    fill: none;
+    stroke: $darkGray;
+    stroke-opacity: 0.2;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    font-family: "Muli";
+    font-size: 11px;
+    fill: lightgray;
+  }
+
+  .y-grid line {
+    stroke: #e67474;
+    stroke-opacity: 0.2;
+    shape-rendering: crispEdges;
+    stroke-dasharray: 5, 5;
+  }
+
+  .x-grid line {
+    stroke: $darkGray;
+    stroke-opacity: 0.2;
+    shape-rendering: crispEdges;
+  }
+
+  .grid path {
+    stroke-width: 0;
+  }
+}
+
+.bar-chart-graph {
+  overflow-x: scroll;
+
+  .y {
+    path {
+      stroke: none !important;
+    }
+
+    g {
+      line {
+        stroke: none;
+      }
+    }
+  }
+
+  .x {
+    g {
+      line {
+        stroke: none;
+      }
+
+      // text {
+      //   transform: rotate(-12deg) !important;
+      // }
+    }
+  }
+
+  .y-axis path {
+    stroke-width: 0 !important;
+  }
+
+  .axis path {
+    fill: none;
+    stroke: $darkGray;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+
+  .axis line {
+    fill: none;
+    stroke: $darkGray;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    font-family: "Muli";
+    font-size: 11px;
+    fill: $darkGray;
+    width: 60px !important;
+    word-break: break-all !important;
+  }
+
+  .grid line {
+    stroke: $darkGray;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+    stroke-dasharray: 5, 5;
+  }
+
+  .grid path {
+    stroke-width: 0;
+  }
+}
+
+.bar-chart-graph::-webkit-scrollbar {
+  width: 1px;
+}
+
+.bar-chart-graph::-webkit-scrollbar-track {
+  -webkit-box-shadow: #ccc;
+  box-shadow: #ccc;
+}
+
+.bar-chart-graph::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.area-color {
+  fill: url(#area-gradient) !important;
+}
+
+.fullviewComponent {
+  padding: 12px 36px !important;
+
+  .fullview-heading {
+    margin-bottom: 10px;
+    height: auto;
+
+    i {
+      padding: 0px 4px 1px 3px;
+      border: 1px solid $darkGray;
+      border-radius: 50%;
+    }
+  }
+
+  select {
+    border: 1px solid $lightBlue;
+    color: $lightBlue;
+    padding: 2px;
+    margin-left: 8px;
+    height: 28px;
+    padding: 0px 8px;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .widget-block {
+    position: relative;
+    min-height: 300px;
+    height: auto !important;
+    padding-bottom: 32px;
+  }
+}
+
+// Media Queries
+// samller devices
+@media (max-width: 576px) {
+  .dashboard {
+    padding: 0px 16px !important;
+  }
+
+  .dashboard .row .col-md-12 .widget-block {
+    font-size: 0.8em;
+    height: auto;
+    min-height: 280px;
+    padding-bottom: 52px;
+  }
+
+  .headingText {
+    position: relative;
+    margin-left: -10px;
+    padding-left: 4px;
+    margin-bottom: 4px;
+
+    .widget-menu {
+      position: absolute;
+      right: 0;
+
+      .dropdown-menu {
+        ul {
+          li {
+            margin: 0;
+            padding: 0;
+
+            img {
+              height: 10px;
+              width: 10px;
+            }
+          }
+        }
+      }
+
+      .dropdown-menu-items {
+        li {
+          margin: 0;
+          padding: 0;
+
+          img {
+            height: 10px;
+            width: 10px;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+
+    ul li {
+      margin-right: 2px;
+    }
+
+    .nav-item a {
+      font-size: 13px;
+      padding: 2px;
+    }
+  }
+
+  .bigNumber {
+    margin-right: 2px !important;
+  }
+
+  .graph-badges {
+    font-size: 0.8em;
+  }
+
+  // activity-widget
+  .activity-widgets .widget-block {
+    min-width: 280px;
+  }
+
+  // tables data
+  .org-performance,
+  .content-perform,
+  .learner-track-fullview,
+  .content-fullview {
+    table tr th {
+      padding: 0;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    table tr td {
+      padding: 1px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0px 16px;
+  }
+
+  .dashboard .row .col-md-12 .widget-block {
+    font-size: 0.8em;
+    height: auto;
+    min-height: 280px;
+    padding-bottom: 52px;
+  }
+
+  .headingText {
+    position: relative;
+    margin-left: -16px;
+    padding-left: 4px;
+    margin-bottom: 4px;
+
+    .widget-menu {
+      position: absolute;
+      right: 0;
+    }
+
+    ul li {
+      margin-right: 4px;
+    }
+
+    .nav-item a {
+      font-size: 13px;
+      padding: 2px;
+    }
+  }
+
+  // .userImages .imgActive:first-child img {
+  //   margin-left: 0;
+  // }
+  .userImages .imgActive img {
+    height: 42px !important;
+    width: 42px !important;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}

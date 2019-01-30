@@ -1,0 +1,39 @@
+.feedback-component {
+  .feedback-emoji {
+    // padding: 12px;
+    // margin-left: -10px;
+    // margin-right: 10px;
+    img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  .p-t-18 {
+    padding: 18px 0px;
+  }
+  .m-t-10 {
+    display: inline-block;
+  }
+  .m-r-3 {
+    margin-right: 3px;
+  }
+  .danger-class {
+    color: #ff4e00;
+  }
+}
+
+@media (max-width: 576px) {
+  .feedback-emoji {
+    width: max-content;
+    padding: 0;
+    // text-align: center;
+    img {
+      height: 60px;
+      width: 60px;
+    }
+  }
+  .p-t-18 {
+    padding-top: 0;
+  }
+}

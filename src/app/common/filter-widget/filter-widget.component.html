@@ -1,0 +1,98 @@
+<div class="filter-widget" [ngClass]="{'filterComponent': !filtersInfo.viewDetailsFilters, 'filterComponentDetails': filtersInfo.viewDetailsFilters}">
+  <div>
+    <ul class="float-left">
+      <!-- <span style="vertical-align: super"> -->
+      <span>
+        <li class="list-inline-item searchList" *ngIf="filtersInfo.search">
+          <div class="search-org-user">
+            <span class="search-icon">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+            <input type="text" [ngModel]="serachName" (keyup)="searchItem($event)" placeholder="Search">
+          </div>
+
+          <div class="showFilter-list" *ngIf="displayDropdown" (clickOutside)="onClickedOutside($event)" [exclude]="'.searchList,.search-org-user, .search-icon,.fa-search'">
+            <span class="closeDropdown text-warning" (click)="closeDropDown()">
+              <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </span>
+            <ul>
+              <li class="list-unstyled">
+                <span *ngIf="searchFilterData.searchComponent=='organization-interests'">
+                  <b>Select for</b> (Upto {{searchFilterData.searchCount}} topics)
+                </span>
+                <span *ngIf="searchFilterData.searchComponent!='organization-interests'">
+                  <b>Select for</b> (Upto {{searchFilterData.searchCount}} people)
+                </span>
+                <div *ngIf="searchList.length>0">
+                  <div class="filter-name" *ngFor="let searchItem of searchList; index as i" (click)="selectSearchItem(searchItem)">
+                    <span class="check-box" [ngClass]="{'checked-box': checkItemInApplied(filtersInfo.appliedFilters,searchItem) }"></span>
+                    <!-- <span class="check-box" [ngClass]="{'checked-box': searchNames.includes(searchItem)}"></span> -->
+                    <!-- <span>{{searchItem.teamName}} </span> -->
+                    <span data-toggle="tooltip" data-placement="top" title="{{searchItem[searchFilterData.searchBy]}}">
+                      {{searchItem[searchFilterData.searchBy]}}
+                    </span>
+                  </div>
+                </div>
+                <div *ngIf="noSearchResultFlag">
+                  <span>No search results found</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </span>
+      <span *ngIf="filtersInfo.search">
+        <li class="list-inline-item searchText" *ngFor="let searchName of filtersInfo.appliedFilters; let i = index">
+          <div>{{searchName[searchFilterData.searchBy]}} </div>
+          <i class="fa fa-times-circle cursor-pointer" (click)="removeSearchName(searchName,i)"></i>
+        </li>
+      </span>
+      <span>
+        <li class="list-inline-item filter" *ngIf="filtersInfo.filters">
+          <div class="filterSelect">
+            <div class="getFilter" (click)="showFilter()">
+              <span>{{filterDisplayName}}</span>
+              <span>
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+            <div *ngIf="displayDropdown" (clickOutside)="onClickedOutside($event)" [exclude]="'.filter,.filterSelect, .getFilter,.fa-search'">
+              <div class="showFilter-list">
+                <span class="closeDropdown text-warning" (click)="closeDropDown()">
+                  <i class="fa fa-times-circle fa-lg"></i>
+                </span>
+                <ul>
+                  <li class="list-unstyled" *ngFor="let filterType of filtersList; index as i">
+                    <div class="boldText"> Select {{filterType.type}} </div>
+                    <div class="filter-name" *ngFor="let filterObj of filterType.data; index as j" (click)="selectFilter(filterType, filterObj)">
+                      <span class="check-box" [ngClass]="{'checked-box': checkItemInApplied(filtersInfo.appliedFilters,{name:filterObj.name})}"></span>
+                      <span data-toggle="tooltip" data-placement="top" title="{{filterObj.name}}">{{filterObj.name}}
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </span>
+      <span *ngIf="filtersInfo.filters">
+        <li class="list-inline-item searchText" *ngFor="let filter of filtersInfo.appliedFilters">
+          <div data-toggle="tooltip" data-placement="top" title="{{filter.name}}"> {{filter.name}}
+          </div>
+          <i class="fa fa-times-circle cursor-pointer" (click)="removeFilter(filter)"></i>
+        </li>
+
+      </span>
+
+    </ul>
+
+    <div class="viewDetails" *ngIf="filtersInfo.viewDetails" (click)="routetoFullview()">
+      <span class="text-primary float-right" class="cursor-pointer"> View Details</span>
+      <span>
+        <i class="fa fa-angle-right"></i>
+      </span>
+    </div>
+
+  </div>
+</div>

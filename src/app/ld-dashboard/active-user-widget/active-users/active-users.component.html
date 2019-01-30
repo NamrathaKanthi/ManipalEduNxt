@@ -1,0 +1,81 @@
+<div class="active-users">
+  <b>Active users data</b>
+  <!-- <div class="row activity-user-score">
+  <div class="col-md-5">
+    <div>
+      <b>Current Activity</b>
+    </div>
+    <div class="d-inline imageSpace activeUsersImg">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg">
+    </div>
+    <div class="d-inline bigNumber">{{usersData.currentActivity}}</div>
+    <div class="small font-weight-bold">
+      <a>Active users</a> are currently using this platform
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div>
+      <b>Total Users</b>
+    </div>
+    <div class="d-inline imageSpace">
+      <img src="../../assets/images/people.png">
+    </div>
+    <div class="d-inline bigNumber">{{usersData.totalUsers}}</div>
+    <div class="small font-weight-bold">
+      <a>346</a> new users have joined since last month
+    </div>
+  </div>
+</div> -->
+
+  <div *ngIf="spinner_loader" class="spinner_loading">
+    <app-spinner></app-spinner>
+  </div>
+
+  <div *ngIf="!spinner_loader && noDataFlag" class="spinner_loading">
+    <span class="spinner_inside">No data found</span>
+  </div>
+
+  <div class="line-block">
+    <!-- <div id="activeUserGraph"></div> -->
+    <app-linegraph [lineGraphData]="chartData"></app-linegraph>
+    <div class="tool-tip">
+      <table>
+        <tr>
+          <td class="ttip-div ttip-date"></td>
+        </tr>
+        <tr>
+          <td class="ttip-div ttip-learners"></td>
+        </tr>
+        <tr>
+          <td class="ttip-div ttip-faculty"></td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="responseData.length>0">
+
+      <div class="row graph-badges">
+        <div class="col-md-6 col-sm-6 col-6">
+          <i class="fa fa-circle learner" aria-hidden="true"></i>
+          Learners
+        </div>
+        <div class="col-md-6 col-sm-6 col-6">
+          <i class="fa fa-circle faculty" aria-hidden="true"></i>
+          Faculty and Admins
+        </div>
+      </div>
+
+      <div class="active-dates">
+        <p>
+          <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+          Active users count from
+          <span class="date-class"> {{responseData[0].date | date}} </span> to
+          <span class="date-class"> {{responseData[responseData.length-1].date | date}} </span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>

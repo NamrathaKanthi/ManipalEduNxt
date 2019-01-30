@@ -1,0 +1,32 @@
+.widget-heading {
+  p {
+    margin-bottom: 0px;
+    padding-left: 6px;
+  }
+  i {
+    color: #ff5722;
+    right: 8px !important;
+    top: 8px;
+    font-size: 14px;
+  }
+}
+
+.widget-block {
+  .headingText {
+    margin-bottom: 0px;
+  }
+}
+
+.list-inline {
+  padding-left: 0px;
+  width: 170px;
+}
+
+
+.dropdown-toggle::after{
+  display: none;
+}
+
+table th {
+  padding: 0px 12px;
+}

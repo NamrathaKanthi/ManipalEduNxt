@@ -1,0 +1,68 @@
+<div class="dashboard fullviewComponent learner-performance-fullview">
+  <div class="widget-heading row">
+    <span>
+      <i class="fas fa-angle-left" routerLink="/"></i>
+    </span>
+    <span> How are my notifications performing?</span>
+  </div>
+  <div class="widget-block">
+    <div>
+      <span>Display graph for </span>
+      <span>
+        <Select class="f-w-100">
+          <option value="ScheduledVsDelivered" class="f-w-100"> Scheduled Vs Delivered </option>
+          <option value="SeenVsResponded" class="f-w-100"> Seen Vs Responded </option>
+        </Select>
+      </span>
+    </div>
+    <div class="m-t-50">
+      <app-scheduled-delivered></app-scheduled-delivered>
+    </div>
+    <div>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">
+              <span>
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </span>
+              Notifcation
+              <span>
+                <i class="fa fa-sort" aria-hidden="true"></i>
+              </span>
+            </th>
+            <th scope="col">Scheduled on
+              <span>
+                <i class="fa fa-sort" aria-hidden="true"></i>
+              </span>
+            </th>
+            <th scope="col">Delivered on
+              <span>
+                <i class="fa fa-sort" aria-hidden="true"></i>
+              </span>
+            </th>
+            <th scope="col">% Times Responded
+              <span>
+                <i class="fa fa-sort" aria-hidden="true"></i>
+              </span>
+            </th>
+            <th scope="col">% Times Seen
+              <span>
+                <i class="fa fa-sort" aria-hidden="true"></i>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let content of contentData">
+            <th scope="row" [ngClass]="{'fail_class': content.DeliveredOn == 'Failed' }"> {{content.notification}} </th>
+            <td> {{content.scheduledOn}} </td>
+            <td [ngClass]="{'fail_class': content.DeliveredOn == 'Failed' }"> {{content.DeliveredOn}} </td>
+            <td> {{content.TimesResponded}} </td>
+            <td> {{content.TimesSeen}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

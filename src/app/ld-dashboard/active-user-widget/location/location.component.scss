@@ -1,0 +1,59 @@
+.location {
+  p {
+    margin-left: 5px !important;
+  }
+
+  .users {
+    p {
+      margin-left: 0px !important;
+      margin-bottom: 0px !important;
+    }
+
+    .arrow-text {
+      font-size: 10px;
+    }
+  }
+
+  .locationGraph {
+    padding: 6px;
+  }
+}
+
+.location-name {
+  color: #5584ff;
+  background-color: #5584ff;
+}
+
+.text-transform {
+  text-transform: capitalize;
+}
+
+table tr {
+  border-bottom: 2px dotted #ddd;
+
+  td {
+    vertical-align: middle;
+
+    i {
+      border-radius: 50%;
+    }
+  }
+}
+
+.f-12 {
+  font-size: 12px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.f-12:before {
+  content: "\f111";
+  display: inline-block;
+  -moz-osx-font-smoothing: grayscale;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: #5584ff;
+}

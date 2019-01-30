@@ -1,0 +1,47 @@
+<div>
+  <p>
+    <b>View content consumption</b>
+  </p>
+
+  <table class="table table-borderless" *ngIf="contentData.length>0">
+    <thead>
+      <tr>
+        <th scope="col" style="width:35%" (click)="sortByFn('contentName')">Content
+          <span>
+            <i class="fa fa-sort" aria-hidden="true"></i>
+          </span>
+        </th>
+        <th scope="col" (click)="sortByFn('author')">Author
+          <span>
+            <i class="fa fa-sort" aria-hidden="true"></i>
+          </span>
+        </th>
+        <th scope="col" (click)="sortByFn('views')">Views
+          <span>
+            <i class="fa fa-sort" aria-hidden="true"></i>
+          </span>
+        </th>
+        <th scope="col" (click)="sortByFn('avgRating')">Avg. Rating
+          <span>
+            <i class="fa fa-sort" aria-hidden="true"></i>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let content of contentData">
+        <th scope="row" class="content-name" data-toggle="tooltip" data-placement="top" title="{{content.contentName}}">
+          {{content.contentName}}
+        </th>
+        <td> {{content.author}} </td>
+        <td> {{content.views | customNumber}} </td>
+        <td>
+          <span>
+            <i class="fa fa-star-o"></i>
+          </span>
+          <span> {{content.avgRating}} </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

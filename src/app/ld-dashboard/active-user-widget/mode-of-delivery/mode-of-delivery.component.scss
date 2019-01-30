@@ -1,0 +1,56 @@
+#activeUserGraph {
+  margin-top: 20px;
+}
+
+.tool-tip {
+  position: absolute;
+  z-index: 10;
+  visibility: hidden;
+  background-color: white;
+  pointer-events: none;
+  color: black;
+  border-radius: 5px;
+  border: solid 1px #e9e9e9;
+  font-size: 12px;
+  font-family: "Muli";
+  width: 150px;
+
+  table {
+    width: 100%;
+  }
+
+  .ttip-div {
+    padding: 5px;
+    width: 70px;
+  }
+
+  .ttip-date {
+    font-weight: bold !important;
+  }
+}
+
+// #modeOfDeliveryGraph {
+//   height: 200px !important;
+// }
+
+.graph-badges {
+  .learner {
+    color: #5584FF;
+    // background-color: #5584FF;
+  }
+
+  .faculty {
+    color: #ff4e00;
+    // background-color: #ff4e00;
+  }
+}
+
+.mode-dates {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 16px;
+
+  .date-class {
+    color: #5584FF;
+  }
+}

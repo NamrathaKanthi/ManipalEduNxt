@@ -1,0 +1,56 @@
+<div class="widget-block userstrained-component">
+  <div class="headingText clearfix">
+    <ul class="nav float-left">
+      <li class="nav-item">
+        <a class="nav-link">Goals: Time Spent</a>
+      </li>
+    </ul>
+    <div>
+      <span class="float-right widget-menu" data-toggle="tooltip" data-placement="top" title="Time Spent">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+
+  <div *ngIf="spinner_loader" class="spinner_loading">
+    <app-spinner></app-spinner>
+  </div>
+
+  <div *ngIf="!spinner_loader && noDataFlag" class="spinner_loading">
+    <span class="spinner_inside">No data found</span>
+  </div>
+
+  <!-- <div [hidden]="spinner_loader"><div appHalfdonutchart [data]="timeSpentPercent"></div></div> -->
+
+  <div [hidden]="spinner_loader" appHalfdonutchart [data]="timeSpentPercent"></div>
+
+  <div *ngIf="!spinner_loader && !noDataFlag" class="row m-t-8 text-fix-bottom">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="d-flex p-r-20">
+
+        <div class="bigNumber float-left" [ngClass]="{'positive-color': responseData.timeSpent >= responseData.expectedTimeSpent, 'negative-color': responseData.timeSpent < responseData.expectedTimeSpent}">
+          {{responseData.timeSpent}}%
+        </div>
+
+        <div class="p-t-7 changeInNumberText">
+          <div class="arrow-space">
+            <span [ngClass]="{'changeNumber': responseData.timeSpent >= responseData.expectedTimeSpent, 'changeNumberLow': responseData.timeSpent < responseData.expectedTimeSpent}">
+              Expected {{responseData.expectedTimeSpent}}%.
+            </span>
+          </div>
+          <p class="font-color">
+            <span [ngClass]="{'changeNumber': responseData.timeSpent >= responseData.expectedTimeSpent, 'changeNumberLow': responseData.timeSpent < responseData.expectedTimeSpent}">
+              {{responseData.durationSpent | customNumber}}
+            </span>
+            <span>
+              of {{responseData.courseDuration | customNumber}} hours spent on learning activities
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <p class="m-t-10">of your goals has been met</p>
+
+    </div>
+  </div>
+</div>

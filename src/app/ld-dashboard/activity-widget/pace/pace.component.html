@@ -1,0 +1,52 @@
+<div class="widget-block">
+  <div class="headingText clearfix">
+    <ul class="nav float-left">
+      <li class="nav-item">
+        <a class="nav-link">Learner Pace</a>
+      </li>
+    </ul>
+    <div>
+      <span class="float-right widget-menu" data-toggle="tooltip" data-placement="top" title="Learner Pace">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+
+  <div *ngIf="spinner_loader" class="spinner_loading">
+    <app-spinner></app-spinner>
+  </div>
+
+  <div *ngIf="!spinner_loader && noDataFlag" class="spinner_loading">
+    <span class="spinner_inside">No data Found</span>
+  </div>
+  <div *ngIf="!spinner_loader && !noDataFlag" appDonutChart [data]="paceTrackValues" [graphSize]="graphSize">
+  </div>
+  <div *ngIf="!spinner_loader && !noDataFlag" class="m-t-16">
+    <div class="text-fix-bottom">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-6">
+          <p class="bigNumber behindSchedule">
+            {{responseData.behindSchedule | customNumber}}
+          </p>
+          <p class="m-t-10">Behind Schedule</p>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-6">
+          <p class="bigNumber havenotStarted">
+            {{responseData.haveNotStarted | customNumber}}
+          </p>
+          <p class="m-t-10">Haven't Started</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-6">
+          <p class="bigNumber aheadOfScheduleColor">{{responseData.aheadSchedule | customNumber}}</p>
+          <p class="m-t-10 m-b-0">Ahead of Schedule</p>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-6">
+          <p class="bigNumber onTrackClass">{{responseData.onTrack | customNumber}}</p>
+          <p class="m-t-10 m-b-0">On Track</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

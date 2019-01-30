@@ -1,0 +1,48 @@
+<div class="widget-block engagement-component">
+  <div class="headingText clearfix">
+    <ul class="nav float-left">
+      <li class="nav-item">
+        <a class="nav-link">Scorecard</a>
+      </li>
+    </ul>
+    <div>
+      <span class="float-right widget-menu" data-toggle="tooltip" data-placement="top" title="Need Help?">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+
+  <div *ngIf="spinner_loader" class="spinner_loading">
+    <app-spinner></app-spinner>
+  </div>
+
+  <div *ngIf="!spinner_loader && noDataFlag" class="spinner_loading">
+    <span class="spinner_inside">No data found</span>
+  </div>
+
+  <div [hidden]="spinner_loader">
+    <!-- <div appHalfdonutchart [data]="percentageChange" [expectedChange]="expectedChange"></div> -->
+    <!-- <div appHalfdonutchart [data]="percentageChange"></div> -->
+  </div>
+
+  <div *ngIf="!spinner_loader && !noDataFlag" class="m-t-8 text-fix-bottom">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6 col-6">
+        <p class="">
+          <span class="bigNumber positive-color">80</span>
+          <span class="changeNumber position-absolute">percentile</span>
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 col-6">
+        <p class="">
+          <span class="bigNumber positive-color">4.85</span>
+          <span class="changeNumber position-absolute">CGPA</span>
+        </p>
+      </div>
+    </div>
+    <p class="m-t-10">
+      You are currently ranked
+      <span class="changeNumber"> 2nd </span>
+    </p>
+  </div>
+</div>

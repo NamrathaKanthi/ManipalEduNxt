@@ -1,0 +1,75 @@
+<div class="widget-heading clearfix font-weight-bold">
+  <p class="float-left">How are my learners performing?</p>
+  <p class="float-right p-r-6" data-toggle="tooltip" data-placement="top" title="How are my learners performing?">
+    <i class="fa fa-question-circle" aria-hidden="true"></i>
+  </p>
+</div>
+<div class="widget-block">
+  <div class="headingText clearfix">
+    <ul class="nav float-left">
+      <li class="nav-item">
+        <a class="nav-link" class="cursor-pointer" [ngClass]="{'active' :getTab =='performance'}" (click)="performanceFn()">Performance</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" class="cursor-pointer" [ngClass]="{'active' :getTab == 'progress'}" (click)="progressFn()">Progress
+          Completion
+        </a>
+      </li>
+    </ul>
+    <div class="float-right widget-menu">
+      <span data-toggle="tooltip" data-placement="top" title="{{tooltipText}}">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </span>
+      <span class="p-l-20" ngbDropdown placement="bottom-right">
+        <i class="fa fa-ellipsis-v ellipse" aria-hidden="true" ngbDropdownToggle></i>
+        <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu-items">
+          <!-- <li class="list-inline-item cursor-pointer">
+              <span>
+                <img src="../../assets/images/save.png">
+              </span>
+              <span class="font-color p-l-10 cursor-pointer">
+                <b>Save this view</b>
+              </span>
+            </li>
+            <li class="list-inline-item cursor-pointer" (click)="open(followUpContent)">
+              <span>
+                <img src="../../assets/images/mail.png">
+              </span>
+              <span class="font-color p-l-10 cursor-pointer">
+                <b>Email this report</b>
+              </span>
+            </li> -->
+          <li class="list-inline-item cursor-pointer" (click)="downloadPdf()">
+            <span class="p-l-10">
+              <img src="../../assets/images/download.png">
+            </span>
+            <span class="font-color p-l-10 cursor-pointer">
+              <b style="font-size:12px;">Download this report</b>
+            </span>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </div>
+
+  <div id="learner-performance">
+
+    <div *ngIf="spinner_loader" class="spinner_loading">
+      <app-spinner></app-spinner>
+    </div>
+
+    <div *ngIf="!spinner_loader && noDataFlag" class="spinner_loading">
+      <span class="spinner_inside">No data found</span>
+    </div>
+
+    <div *ngIf="responseData.length > 0">
+      <app-performance *ngIf="performanceDataSet.length > 0 && getTab == 'performance'" [performanceData]="performanceDataSet"
+        [batches]="batches"></app-performance>
+      <app-progress *ngIf="progressDataSet.length > 0 && getTab == 'progress'" [progressData]="progressDataSet"
+        [batches]="batches"></app-progress>
+    </div>
+
+
+    <!-- <app-filter-widget [filtersInfo]="filtersData" (filterEvent)="getFilterObject($event)"></app-filter-widget> -->
+  </div>
+</div>
